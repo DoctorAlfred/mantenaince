@@ -1,4 +1,4 @@
-const SiteHeader = (logo) => {
+const SiteHeader = (logo = null) => {
 
   return `
       <div class="fixed top-0 w-full flex justify-center p-0 m-auto h-[100px] bg-black z-10">

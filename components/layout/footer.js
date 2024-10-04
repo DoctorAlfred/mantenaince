@@ -1,8 +1,8 @@
-const SiteFooter = (copyrigth, address = null) => {
+const SiteFooter = (copyrigth = ' ', emailContact = ' ') => {
   return `
-      <footer class="fixed bottom-0 bg-black z-10">
-        <div class="text-white py-4">
-          by Alfredo Matricciani
+      <footer class="w-full fixed bottom-0 bg-black z-10">
+        <div class="text-white text-center text-sm py-4 px-2">
+          ${copyrigth} <a href="mailto:${emailContact}" class="hover:text-sky-800 transition-all">${emailContact}</a>
         </div>
       </footer>
   `;

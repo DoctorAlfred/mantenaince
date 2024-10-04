@@ -26,24 +26,24 @@ app.get('/', (req, res) => {
 
   /** Use Render Mode - Comment out these lines of code if not used. */
   // Config Html
-  const language = 'it-IT';
   const title = process.env.APP_NAME;
-  const copyrigth = 'Made Mantenaince';
-
+  const language = process.env.APP_LANGUAGE;
+  const favicon = process.env.APP_FAVICON;
+  const copyrigth = process.env.APP_COPYRIGTH;
+  const siteLink = process.env.APP_LINK;
+  const emailContact = process.env.APP_EMAIL_CONTACT;
   // Config Page
-  const logo = process.env.APP_PATH_LOGO_W_URL;
-
+  const logo = process.env.APP_PATH_LOGO_URL;
   const bg = process.env.APP_PATH_BACK_URL;
-
-  const maintTitle = 'Sito in manutenzione';
-  const firstParagraph = 'In questo momento stiamo apportando modifiche per migliorare la qualità del servizio.';
-  const secondParagraph = 'Vi preghiamo di tornare più tardi.';
-  const thirdParagraph = 'Paragrafo 3';
-
-  const head = SiteHead(title);
+  const maintTitle = 'Mantenaince';
+  const firstParagraph = 'Sito in manutenzione';
+  const secondParagraph = 'In questo momento stiamo apportando modifiche per migliorare la qualità del servizio.';
+  const thirdParagraph = 'Vi preghiamo di tornare più tardi.';
+  /** Start Components */
+  const head = SiteHead(title, favicon);
   const header = SiteHeader(logo);
-  const footer = SiteFooter(copyrigth);
-
+  const footer = SiteFooter(copyrigth, emailContact);
+  /** Render Index Page */
   res.send(`
   <!DOCTYPE html>
   <html lang="`+ language + `">
@@ -57,21 +57,18 @@ app.get('/', (req, res) => {
           <div class="w-[50%] m-auto">
             <p class="text-center mb-10">${firstParagraph}</p>
             <p class="text-center mb-10">${secondParagraph}</p>
+            <p class="text-center mb-10">${thirdParagraph}</p>
           </div>
           <div class="logo w-[50%] h-[90px] m-auto">
             <img src="${bg}" alt="Logo" class="w-full h-full object-contain m-auto mb-4">
           </div>
-        </div>
-
-        <div class="">
-          <h1>${maintTitle}</h1>
-        </div>
-        <div class="">
-          ${firstParagraph}
+          <div class="flex justify-center w-full m-auto mb-[100px]">
+            <a href="${siteLink}" class="hover:text-sky-800 transition-all">${siteLink}</a>
+          </div>
         </div>
 
         <div class="flex justify-center w-full m-auto mb-[100px]">
-          <button onclick="window.history.back()" class="px-6 py-3 bg-green-800 text-white rounded-md hover:bg-sky-800 transition-all">
+          <button onclick="window.history.back()" class="px-6 py-3 text-white rounded-md bg-sky-800 hover:bg-sky-900 transition-all">
             Torna Indietro
           </button>
         </div>
