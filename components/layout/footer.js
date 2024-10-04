@@ -1,10 +1,10 @@
 const SiteFooter = (copyrigth, address = null) => {
   return `
-    <footer class="absolute bottom-0">
-      <div class="text-white">
-        by Alfredo Matricciani
-      </div>
-    </footer>
+      <footer class="fixed bottom-0 bg-black z-10">
+        <div class="text-white py-4">
+          by Alfredo Matricciani
+        </div>
+      </footer>
   `;
 };
 

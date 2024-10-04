@@ -48,26 +48,32 @@ app.get('/', (req, res) => {
   <!DOCTYPE html>
   <html lang="`+ language + `">
     ${head}
-    <body class="bg-black flex flex-col items-center justify-center h-screen min-h-screen relative z-0">
+    <body class="bg-black flex flex-col items-center justify-center relative z-0 h-screen overflow-y-auto">
       ${header}
 
-      <div class="relative container h-auto bg-cover bg-center z-10">
-        <div class="relative z-20 flex flex-col items-center text-white">
+      <div class="relative m-auto container top-20 h-auto">
+        <div class="relative flex flex-col items-center text-white">
           <h1 class="text-3xl font-bold text-center mb-20">${maintTitle}</h1>
-          <p class="text-center mb-10">${firstParagraph}</p>
-          <p class="text-center mb-10">${secondParagraph}</p>
-          <div class="logo w-[50%] h-[120px] m-auto">
-            <img src="${bg}" alt="Logo" class="w-fullm-auto mb-4">
+          <div class="w-[50%] m-auto">
+            <p class="text-center mb-10">${firstParagraph}</p>
+            <p class="text-center mb-10">${secondParagraph}</p>
+          </div>
+          <div class="logo w-[50%] h-[90px] m-auto">
+            <img src="${bg}" alt="Logo" class="w-full h-full object-contain m-auto mb-4">
           </div>
         </div>
 
-        <div class="container">
-          <div class="">
-            <h1>${maintTitle}</h1>
-          </div>
-          <div class="">
-            ${firstParagraph}
-          </div>
+        <div class="">
+          <h1>${maintTitle}</h1>
+        </div>
+        <div class="">
+          ${firstParagraph}
+        </div>
+
+        <div class="flex justify-center w-full m-auto mb-[100px]">
+          <button onclick="window.history.back()" class="px-6 py-3 bg-green-800 text-white rounded-md hover:bg-sky-800 transition-all">
+            Torna Indietro
+          </button>
         </div>
       </div>
       
