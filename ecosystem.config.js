@@ -5,8 +5,8 @@
 
 module.exports = {
   apps : [{
-    name   : "Redirect Express",
-    script: 'node index.js',
+    name   : "mantenaince",
+    script: 'node app.js',
     args: '',
     instances: 1,
     autorestart: true,

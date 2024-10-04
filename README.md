@@ -17,7 +17,7 @@ If Audit not resolve
 ### Use
 
 Local Use
-- node.index.js
+- node app.js
 
 Pm2 Use First Time
 - pm2 start ecosystem.config.js --name mantenaince
